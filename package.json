@@ -1,0 +1,9 @@
+{
+  "name": "ielts-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IELTS kursi landing page — Meta Pixel + CAPI + Google Sheets",
+  "engines": {
+    "node": ">=18"
+  }
+}

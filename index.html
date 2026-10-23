@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELTS kursi — 7.0 ball sari yo'l</title>
+<meta name="description" content="IELTS tayyorlov kursi. 3 oyda 6.5–7.0 ball. Bepul sinov darsiga yoziling.">
+<style>
+  :root{--bg:#f6f7fb;--ink:#14213d;--muted:#5b6478;--brand:#2563eb;--brand-d:#1d4ed8;--ok:#16a34a;--err:#dc2626;--card:#fff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{padding:18px 0}
+  .logo{font-weight:800;font-size:20px;letter-spacing:-.5px}
+  .logo span{color:var(--brand)}
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:30px 0 50px}
+  h1{font-size:40px;line-height:1.15;letter-spacing:-1px;margin-bottom:14px}
+  h1 em{font-style:normal;color:var(--brand)}
+  .lead{color:var(--muted);font-size:18px;margin-bottom:20px}
+  ul.points{list-style:none;display:grid;gap:10px}
+  ul.points li{padding-left:28px;position:relative}
+  ul.points li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+  .card{background:var(--card);border-radius:18px;padding:26px;box-shadow:0 10px 30px rgba(20,33,61,.08)}
+  .card h2{font-size:22px;margin-bottom:4px}
+  .card p.sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+  label{display:block;font-size:14px;font-weight:600;margin:12px 0 6px}
+  input{width:100%;padding:13px 14px;border:1.5px solid #d6dbe6;border-radius:10px;font-size:16px;outline:none;transition:.15s}
+  input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+  input.bad{border-color:var(--err)}
+  .err{color:var(--err);font-size:13px;min-height:18px;margin-top:4px}
+  button{width:100%;margin-top:14px;padding:14px;border:0;border-radius:10px;background:var(--brand);color:#fff;font-size:17px;font-weight:700;cursor:pointer;transition:.15s}
+  button:hover{background:var(--brand-d)}
+  button:disabled{opacity:.6;cursor:not-allowed}
+  .ok{display:none;text-align:center;padding:20px 6px}
+  .ok .tick{font-size:46px;color:var(--ok)}
+  .ok h3{margin:8px 0 4px}
+  .ok p{color:var(--muted)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:50px}
+  .stat{background:var(--card);border-radius:14px;padding:18px;text-align:center}
+  .stat b{display:block;font-size:28px;color:var(--brand)}
+  .stat span{color:var(--muted);font-size:14px}
+  footer{padding:24px 0 40px;text-align:center;color:var(--muted);font-size:13px}
+  @media(max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:30px}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><div class="logo">IELTS<span>Pro</span></div></div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1>3 oyda <em>IELTS 7.0</em> ballga tayyorlaning</h1>
+      <p class="lead">Tajribali ustozlar, haftalik mock testlar va shaxsiy kuzatuv. Birinchi dars — bepul.</p>
+      <ul class="points">
+        <li>Listening, Reading, Writing, Speaking — to'liq tayyorgarlik</li>
+        <li>Har hafta real imtihon formatida mock test</li>
+        <li>Guruhlar 8 kishigacha — har kimga e'tibor</li>
+        <li>Natija bo'lmasa, keyingi oqim bepul</li>
+      </ul>
+    </div>
+
+    <div class="card" id="card">
+      <div id="formBox">
+        <h2>Bepul sinov darsiga yoziling</h2>
+        <p class="sub">Ma'lumotlaringizni qoldiring, 1 soat ichida bog'lanamiz.</p>
+        <form id="leadForm" novalidate>
+          <label for="name">Ismingiz</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Masalan: Asadullo">
+          <div class="err" id="nameErr"></div>
+
+          <label for="phone">Telefon raqamingiz</label>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="+998 90 123 45 67">
+          <div class="err" id="phoneErr"></div>
+
+          <button type="submit" id="btn">Ro'yxatdan o'tish</button>
+        </form>
+      </div>
+      <div class="ok" id="okBox">
+        <div class="tick">✓</div>
+        <h3>Rahmat! Arizangiz qabul qilindi.</h3>
+        <p>Tez orada siz bilan bog'lanamiz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><b>1200+</b><span>bitiruvchi</span></div>
+    <div class="stat"><b>7.0</b><span>o'rtacha natija</span></div>
+    <div class="stat"><b>8 kishi</b><span>bir guruhda</span></div>
+  </section>
+</main>
+
+<footer>© IELTSPro. Barcha huquqlar himoyalangan.</footer>
+
+<script>
+/* ---------- Helpers ---------- */
+function getCookie(n){
+  var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)');
+  return m ? decodeURIComponent(m[1]) : '';
+}
+function uuid(){
+  if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c){
+    var r = Math.random()*16|0; return (c==='x'?r:(r&0x3|0x8)).toString(16);
+  });
+}
+
+/* ---------- Meta Pixel (ID Vercel'dan olinadi) ---------- */
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+var PIXEL_READY = false;
+fetch('/api/config').then(function(r){return r.json()}).then(function(c){
+  if (c && c.pixelId){
+    fbq('init', c.pixelId);
+    fbq('track', 'PageView');
+    PIXEL_READY = true;
+  }
+}).catch(function(){});
+
+/* ---------- Telefon maskasi: +998 XX XXX XX XX ---------- */
+var phone = document.getElementById('phone');
+function formatPhone(raw){
+  var d = raw.replace(/\D/g, '');
+  if (d.indexOf('998') === 0) d = d.slice(3);
+  d = d.slice(0, 9);
+  var out = '+998';
+  if (d.length > 0) out += ' ' + d.slice(0,2);
+  if (d.length > 2) out += ' ' + d.slice(2,5);
+  if (d.length > 5) out += ' ' + d.slice(5,7);
+  if (d.length > 7) out += ' ' + d.slice(7,9);
+  return out;
+}
+phone.addEventListener('focus', function(){ if (!phone.value) phone.value = '+998 '; });
+phone.addEventListener('input', function(){ phone.value = formatPhone(phone.value); });
+phone.addEventListener('blur', function(){ if (phone.value.replace(/\D/g,'').length <= 3) phone.value = ''; });
+
+/* ---------- Forma ---------- */
+var form = document.getElementById('leadForm');
+var nameEl = document.getElementById('name');
+var btn = document.getElementById('btn');
+
+function setErr(el, errId, msg){
+  document.getElementById(errId).textContent = msg || '';
+  el.classList.toggle('bad', !!msg);
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  var name = nameEl.value.trim();
+  var digits = phone.value.replace(/\D/g, '');
+  var ok = true;
+
+  if (name.length < 2){ setErr(nameEl, 'nameErr', 'Ismingizni kiriting'); ok = false; }
+  else setErr(nameEl, 'nameErr', '');
+
+  if (digits.length !== 12 || digits.indexOf('998') !== 0){
+    setErr(phone, 'phoneErr', "To'liq telefon raqamini kiriting"); ok = false;
+  } else setErr(phone, 'phoneErr', '');
+
+  if (!ok) return;   // bo'sh yoki noto'g'ri forma yuborilmaydi
+
+  btn.disabled = true;
+  btn.textContent = 'Yuborilmoqda...';
+
+  var eventId = uuid();
+
+  // 1) Brauzer Pixel — eventID bilan (CAPI bilan dublikat bo'lmasligi uchun)
+  if (PIXEL_READY) fbq('track', 'Lead', {}, { eventID: eventId });
+
+  // 2) Server: CAPI + Google Sheets
+  fetch('/api/lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: name,
+      phone: '+' + digits,
+      event_id: eventId,
+      fbp: getCookie('_fbp'),
+      fbc: getCookie('_fbc'),
+      url: location.href
+    })
+  }).then(function(r){
+    if (!r.ok) throw new Error('server');
+    document.getElementById('formBox').style.display = 'none';
+    document.getElementById('okBox').style.display = 'block';
+  }).catch(function(){
+    btn.disabled = false;
+    btn.textContent = "Ro'yxatdan o'tish";
+    setErr(phone, 'phoneErr', "Xatolik yuz berdi. Qayta urinib ko'ring.");
+  });
+});
+</script>
+</body>
+</html>
